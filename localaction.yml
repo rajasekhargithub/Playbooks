@@ -1,0 +1,12 @@
+--- # Master Playbook demonstrating the delegative command 
+- hosts: webserver
+  user: jenkins
+  sudo: yes
+  connection: ssh
+ pre_tasks:
+  - name: ping the application server
+       local_action: raw ping -c 4 g-ratnakarreddy-gmail-com3 > /etc/ansible/Playbooks/Roles/roles/ping.out
+ roles:
+ - webserver
+
+
